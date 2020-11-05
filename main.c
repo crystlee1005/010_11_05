@@ -3,18 +3,24 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-void swap(int *x, int *y) {
-    int temp;
-    
-    temp = *x;
-    
-	*x = *y;
-	*y = temp; //x는 y를 가리키고, y는 x를 가리킨다.  
+int main(void)
+{
+	int i;
+	int grade[5];
+	int sum, average;
+	for(i=0; i<5; i++)
+	{
+		printf("input grade[%i] = ", i);
+		scanf("%i", &grade[i]);
 	
-}
-void main(void){
-	int a =3;
-	int b =5;
-	swap(&a,&b);
-	printf("a: %i, b:%i\n", a, b);
-}
+	}
+	
+	for(i=0; i<5; i++)
+	{
+		printf("grade[%i] = %d\n", i, grade[i]);
+		sum+=grade[i];
+		average=sum/5 ;
+	}
+	printf("average = %i ", average);
+	return 0;
+ } 
