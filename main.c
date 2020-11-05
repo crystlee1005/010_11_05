@@ -7,20 +7,23 @@ int main(void)
 {
 	int i;
 	int grade[5];
-	int sum, average;
+	int sum;
+	int *ptr;
 	for(i=0; i<5; i++)
-	{
+	{   ptr = grade+i;
 		printf("input grade[%i] = ", i);
-		scanf("%i", &grade[i]);
+		scanf("%i",ptr);
+	
 	
 	}
 	
 	for(i=0; i<5; i++)
-	{
-		printf("grade[%i] = %d\n", i, grade[i]);
-		sum+=grade[i];
-		average=sum/5 ;
+	{   ptr = & grade[i];
+		sum+=*ptr;
+		printf("grade[%i] = %d\n", i, *ptr);
+		
+		
 	}
-	printf("average = %i ", average);
+	printf("average = %i\n ", sum/5 );
 	return 0;
  } 
